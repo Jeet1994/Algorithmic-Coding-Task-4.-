@@ -1,0 +1,28 @@
+/*The ^ operator cannot be implemented because of the its absence in the bodmas rules*/
+/*ofcourse its simple multiplication but, when i use it the compiler throws unusual error*/
+/*some errors still prevail*/
+#include<iostream>
+#include<cctype.h>
+#include<string.h>
+
+string expression = "321/43+486-973/74*87";
+string operators[20];
+string terms[50];
+int term_count=0;
+int operator_count=0;
+for(int i = 0; i < expression.size(); i++)//expression.size() gives the total characters in the given problem.
+{
+     if(expression[i] == '/' || expression[i] == '*' ||
+        expression[i] == '+' || expression[i] == '-')
+     {
+          //extract all operators (in sequential order)
+          operators[operator_count] = expresssion[i];
+          op_counter++;
+          term_counter++;
+     }
+     else if(isdigit(expression[i]))
+     {
+          //Extract terms into individial 'string' containers
+          terms[term_counter] += expression[i];          
+     }             
+}
